@@ -1,0 +1,84 @@
+@import '../../../../styles.scss';
+
+section {
+  top: 0;
+  position: fixed;
+}
+.outer  {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+.inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  margin-top: 10%;
+}
+.bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+}
+.semiText {
+  @include titles;
+}
+.titleText {
+  @include title(80px);
+  margin-bottom: 0;
+  letter-spacing: -0.020em;
+  line-height: 0.70em;
+  color: var(--white);
+}
+span {
+  font-size: 15px;
+  margin-left: -22px;
+}
+
+/*
+font-family: 'Anton', sans-serif;
+font-family: 'League Gothic', sans-serif;
+font-family: 'Poppins', sans-serif;
+ */
+
+.home {
+  background-color: var(--black);
+}
+.first {
+  .bg {
+    background-image: $bg-gradient,
+    url(https://getwallpapers.com/wallpaper/full/7/3/2/1398154-cool-ragnarok-online-wallpaper-1920x1200-for-tablet.jpg)
+  }
+}
+.second {
+  .bg {
+    background-image: $bg-gradient,
+    url(https://getwallpapers.com/wallpaper/full/a/a/e/1398121-ragnarok-online-wallpaper-1920x1080-for-hd-1080p.jpg)
+  }
+}
+.third {
+  .bg {
+    background-image: $bg-gradient,
+      url(https://getwallpapers.com/wallpaper/full/d/6/8/1398105-ragnarok-online-wallpaper-1920x1200-for-iphone-5.jpg);
+  }
+}
+.fourth {
+  .bg {
+    background-image: $bg-gradient,
+      url(https://getwallpapers.com/wallpaper/full/c/0/4/1398136-ragnarok-online-wallpaper-1920x1200-for-meizu.jpg)
+  }
+}
+.fifth {
+  .bg {
+    background-image: $bg-gradient,
+      url(https://getwallpapers.com/wallpaper/full/8/6/c/1398116-best-ragnarok-online-wallpaper-1920x1200.jpg);
+  }
+}
+
+
