@@ -1,29 +1,36 @@
-<nav class="navbar navbar-expand-lg sticky-top">
+<nav class="navbar navbar-expand-lg sticky-top pt-1 pb-1">
   <div class="container-fluid">
-<!--     <div class="col-lg-2" id="wibIconDiv">
-    </div> -->
-    <div class="col-lg-8 collapse navbar-collapse justify-content-center pt-4 pb-4"  id="navbarNavDropdown" data-bs-theme="dark">
+    <div class="col-lg-2" id="wibIconDiv">
+    </div>
+    <div class="col-lg-8 collapse navbar-collapse justify-content-center"  id="navbarNavDropdown" data-bs-theme="dark">
       <ul class="navbar-nav" id="ulList">
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" id="navItem1">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/information" id="navItem2">Information</a>
+          <a class="nav-link" routerLink="/information" id="navItem2">Information</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/downloads" id="navItem3">Downloads</a>
+          <a class="nav-link" routerLink="/downloads" id="navItem3">Downloads</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/rankings" id="navItem4">Rankings</a>
+          <a class="nav-link" routerLink="/rankings" id="navItem4">Rankings</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/donations" id="navItem5">Donations</a>
+          <a class="nav-link" routerLink="/donations" id="navItem5">Donations</a>
         </li>
       </ul>
     </div>
-<!--     <div class="col-lg-2" id="loginBtn">
-      <button>registrarse</button>
-    </div> -->
+    <div class="col-lg-2" id="loginBtn">
+      <ul class="navbar-nav" id="ulList">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" id="navItem6">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" id="navItem6">Login</a>
+        </li>
+      </ul>
+    </div>
     <button class="navbar-toggler custom-toggler-button" data-bs-theme="dark" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
       aria-label="Toggle navigation">

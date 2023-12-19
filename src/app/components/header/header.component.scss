@@ -4,18 +4,16 @@
 }
 
 .navbar{
-  padding: 0 0px;
-}
-#ulList {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.329);
 }
 .nav-link{
   color: white;
+  list-style: none;
 }
 .nav-item{
   @include normalText(16px);
   padding: 2px;
-  margin: 2px;
+  margin: 20px;
   border-radius: 10px;
 }
 #navItem1:hover {
@@ -36,5 +34,9 @@
 }
 #navItem5:hover {
   background-color: var(--green) ;
+  @include borderRadius(20px);
+}
+#navItem6:hover, #navItem7:hover {
+  background-color: var(--pink) ;
   @include borderRadius(20px);
 }
