@@ -30,7 +30,7 @@ section {
   @include titles;
 }
 .titleText {
-  @include title(80px);
+  @include title(300%);
   margin-bottom: 0;
   letter-spacing: -0.020em;
   line-height: 0.70em;
@@ -38,7 +38,7 @@ section {
 }
 span {
   font-size: 15px;
-  margin-left: -22px;
+  margin-left: -12px;
 }
 
 /*
@@ -48,7 +48,8 @@ font-family: 'Poppins', sans-serif;
  */
 
 .home {
-  background-color: var(--black);
+  background-image: $bg-gradient,
+  url(https://getwallpapers.com/wallpaper/full/6/b/8/1398123-top-ragnarok-online-wallpaper-1920x1200.jpg)
 }
 .first {
   .bg {
