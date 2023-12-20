@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from '@interceptors/token.interceptor';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,10 +18,7 @@ import { DownloadsComponent } from './modules/home/downloads/downloads.component
 import { RankingsComponent } from './modules/home/rankings/rankings.component';
 import { DonationsComponent } from './modules/home/donations/donations.component';
 import { InformationComponent } from './modules/home/information/information.component';
-import { RegisterComponent } from './modules/auth/register/register.component';
-import { LoginComponent } from './modules/auth/login/login.component';
-import { ForgotPasswordComponent } from './modules/auth/forgot-password/forgot-password.component';
-import { RecoveryComponent } from './modules/auth/recovery/recovery.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -33,16 +34,19 @@ import { RecoveryComponent } from './modules/auth/recovery/recovery.component';
     RankingsComponent,
     DonationsComponent,
     InformationComponent,
-    RegisterComponent,
-    LoginComponent,
-    ForgotPasswordComponent,
-    RecoveryComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

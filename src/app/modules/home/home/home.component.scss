@@ -49,7 +49,9 @@ font-family: 'Poppins', sans-serif;
 
 .home {
   background-image: $bg-gradient,
-  url(https://getwallpapers.com/wallpaper/full/6/b/8/1398123-top-ragnarok-online-wallpaper-1920x1200.jpg)
+  url(https://getwallpapers.com/wallpaper/full/6/b/8/1398123-top-ragnarok-online-wallpaper-1920x1200.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .first {
   .bg {

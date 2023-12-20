@@ -5,10 +5,17 @@ import { DownloadsComponent } from './modules/home/downloads/downloads.component
 import { RankingsComponent } from './modules/home/rankings/rankings.component';
 import { DonationsComponent } from './modules/home/donations/donations.component';
 import { InformationComponent } from './modules/home/information/information.component';
-import { RegisterComponent } from './modules/auth/register/register.component';
-import { LoginComponent } from './modules/auth/login/login.component';
+
+import { AuthGuard } from '@guards/auth.guard';
+import { RedirectGuard } from '@guards/redirect.guard';
+
 
 const routes: Routes = [
+  {
+    path: '',
+    canActivate: [ RedirectGuard ],
+    loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule),
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -29,36 +36,17 @@ const routes: Routes = [
     path: 'donations',
     component: DonationsComponent
   },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
+
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
-/*   {
-    path: 'projects',
-    component: ProjectsComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
-  },
+/*
   {
     path: 'not-found',
     component: NotFoundComponent
   },
-  {
-    path: 'projects/:id',
-    component: ProjectDetailComponent
-  },
-
   //RENDERIZA LA PAGE NOTFOUND.... SIEMPRE VA DE ULTIMO PORQUE INTERFIERE!....
   {
     path: '**',
