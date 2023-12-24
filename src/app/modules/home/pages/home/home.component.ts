@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     const outerWrappers = gsap.utils.toArray<HTMLElement>(".outer");
     const innerWrappers = gsap.utils.toArray<HTMLElement>(".inner");
     const hiddenElements = document.querySelectorAll('.hidden');
-    let currentIndex = -1;
+    let currentIndex = -2;
     let animating: boolean;
     let touchStartY: number | null = null;
 

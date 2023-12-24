@@ -8,30 +8,22 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
     path: 'login',
     component: LoginComponent,
-    title: 'Login'
   },
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent,
-    title: 'Forgot Password'
   },
   {
     path: 'register',
     component: RegisterComponent,
-    title: 'Register'
   },
   {
     path: 'recovery',
     component: RecoveryComponent,
-    title: 'Recovery'
-  }
+  },
+
 ];
 
 @NgModule({

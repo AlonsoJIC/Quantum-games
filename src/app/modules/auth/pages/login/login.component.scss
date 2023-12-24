@@ -1,4 +1,11 @@
-body {
-  background-color: red;
-  color: aqua;
+@import '../../../../../styles.scss';
+
+#mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	background-image: $bg-gradient,
+  url(https://s0.smartresize.com/wallpaper/456/494/HD-wallpaper-anime-original-animal-ears-girl-room.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }

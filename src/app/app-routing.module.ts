@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './modules/home/home/home.component';
-import { DownloadsComponent } from './modules/home/downloads/downloads.component';
-import { RankingsComponent } from './modules/home/rankings/rankings.component';
-import { DonationsComponent } from './modules/home/donations/donations.component';
-import { InformationComponent } from './modules/home/information/information.component';
+import { HomeComponent } from './modules/home/pages/home/home.component';
+import { DownloadsComponent } from './modules/home/pages/downloads/downloads.component';
+import { RankingsComponent } from './modules/home/pages/rankings/rankings.component';
+import { DonationsComponent } from './modules/home/pages/donations/donations.component';
+import { InformationComponent } from './modules/home/pages/information/information.component';
+import { NotFoundComponent } from './modules/home/pages/not-found/not-found.component';
+
 
 import { AuthGuard } from '@guards/auth.guard';
 import { RedirectGuard } from '@guards/redirect.guard';
@@ -13,8 +15,18 @@ import { RedirectGuard } from '@guards/redirect.guard';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     canActivate: [ RedirectGuard ],
     loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'profile',
+    canActivate: [ AuthGuard ],
+    loadChildren: () => import('./modules/profile/profile.module').then((m) => m.ProfileModule),
   },
   {
     path: 'home',
@@ -38,12 +50,6 @@ const routes: Routes = [
   },
 
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-/*
-  {
     path: 'not-found',
     component: NotFoundComponent
   },
@@ -51,7 +57,7 @@ const routes: Routes = [
   {
     path: '**',
     component: NotFoundComponent
-  }, */
+  },
 ];
 
 @NgModule({
