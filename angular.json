@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Wib:build:production"
+              "buildTarget": "Wib:build:production"
             },
             "development": {
-              "browserTarget": "Wib:build:development"
+              "buildTarget": "Wib:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Wib:build"
+            "buildTarget": "Wib:build"
           }
         },
         "test": {
