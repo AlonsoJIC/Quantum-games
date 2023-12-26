@@ -17,8 +17,9 @@
     </div>
 
     <div>
-      <app-btn typeBtn="submit" color="success" [loading]="statusUser === 'loading'">Continue</app-btn>
+      <app-button type="submit" typeBtn="submit" color="green" [loading]="statusUser === 'loading'" >Continue</app-button>
     </div>
+
   </form>
 </div>
 
@@ -92,7 +93,7 @@
       </p>
     </div>
     <div>
-      <app-btn typeBtn="submit" color="success" [loading]="status === 'loading'">Register</app-btn>
+      <button typeBtn="submit" [disabled]="status === 'loading'">Register</button>
     </div>
   </form>
 

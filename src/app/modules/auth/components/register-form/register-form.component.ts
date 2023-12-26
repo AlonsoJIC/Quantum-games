@@ -46,7 +46,7 @@ export class RegisterFormComponent {
       .subscribe({
         next: () => {
           this.status = 'success';
-          this.router.navigate(['/app/boards']);
+          this.router.navigate(['/profile']);
         },
         error: (error) => {
           this.status = 'failed';

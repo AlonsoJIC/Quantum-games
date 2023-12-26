@@ -13,12 +13,12 @@ import { CatComponent } from './components/animations/cat/cat.component';
 import { TitleComponent } from './components/animations/title/title.component';
 import { SubtitleComponent } from './components/animations/subtitle/subtitle.component';
 import { ScrollDownArrowComponent } from './components/animations/scroll-down-arrow/scroll-down-arrow.component';
-import { ButtonComponent } from './components/button/button.component';
 import { DownloadsComponent } from './modules/home/pages/downloads/downloads.component';
 import { RankingsComponent } from './modules/home/pages/rankings/rankings.component';
 import { DonationsComponent } from './modules/home/pages/donations/donations.component';
 import { InformationComponent } from './modules/home/pages/information/information.component';
-import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { SharedModule } from '@shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -29,12 +29,10 @@ import { RegisterFormComponent } from './components/register-form/register-form.
     TitleComponent,
     SubtitleComponent,
     ScrollDownArrowComponent,
-    ButtonComponent,
     DownloadsComponent,
     RankingsComponent,
     DonationsComponent,
     InformationComponent,
-    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +40,8 @@ import { RegisterFormComponent } from './components/register-form/register-form.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }

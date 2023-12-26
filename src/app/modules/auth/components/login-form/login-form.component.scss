@@ -6,8 +6,6 @@
 }
 
 section {
-
-
 	border: 2px solid rgba(255, 255, 255, 0.397);
 	border-radius: 30px;
 	backdrop-filter: blur(15px);
@@ -75,22 +73,7 @@ input {
 		}
 	}
 }
-.btn1 {
-	width: 100%;
-	height: 40px;
-	border-radius: 40px;
-	background-color: var(--white);
-  color: var(--black);
-	border: none;
-	outline: none;
-	cursor: pointer;
-	font-size: 1rem;
-	font-weight: 600;
-	transition: all 0.4s ease;
-	&:hover {
-		background-color: var(--black);
-	}
-}
+
 .register {
 	font-size: 0.9rem;
 	color: var(--white);

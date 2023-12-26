@@ -1,0 +1,10 @@
+@import '../../../../../styles.scss';
+
+.container {
+  @include borderRadius(15px);
+  background-color: var(--white);
+}
+
+.button{
+  background-color: red;
+}

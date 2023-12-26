@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() color: 'red' | 'green' | 'blue' | 'pink' | 'white' = 'red';
+  @Input() typeBtn: 'reset' | 'submit' | 'button' = 'button';
+  @Input() disabled = false;
+  @Input() loading = false;
+
 }
