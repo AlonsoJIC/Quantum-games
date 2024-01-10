@@ -54,15 +54,13 @@
       <p class="">Credentials are invalid</p>
     </div>
 
-    <!-- LOGIN BUTTON -->
-    <div class="">
-      <app-button  typeBtn="submit" color="green" [loading]="status === 'loading'">Login</app-button>
-    </div>
-
     <!-- REGISTER BUTTON -->
     <div class="register">
       <p>Don't have a account <a href="#">Register</a></p>
     </div>
+
+    <!-- LOGIN BUTTON -->
+    <app-button  typeBtn="submit" [loading]="status === 'loading'">Login</app-button>
 
   </form>
 </section>
