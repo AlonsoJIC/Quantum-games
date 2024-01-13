@@ -1,5 +1,5 @@
 .myBtn {
-  position: absolute;
+  position:relative;
 }
 
 button {
@@ -21,7 +21,6 @@ button {
 .myBtn:hover {
   color: #101010;
 }
-
 .myBtn:before {
   content: '';
   position: absolute;
@@ -34,9 +33,7 @@ button {
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.5s
-
 }
-
 .myBtn:hover:before {
   transform: scaleX(1);
   transform-origin: left;

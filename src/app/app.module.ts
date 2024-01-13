@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './modules/home/pages/home/home.component';
 import { CatComponent } from './components/animations/cat/cat.component';
 import { TitleComponent } from './components/animations/title/title.component';
@@ -18,6 +19,8 @@ import { RankingsComponent } from './modules/home/pages/rankings/rankings.compon
 import { DonationsComponent } from './modules/home/pages/donations/donations.component';
 import { InformationComponent } from './modules/home/pages/information/information.component';
 import { SharedModule } from '@shared/shared.module';
+import { CardsComponent } from './components/cards/cards.component';
+
 
 
 @NgModule({
@@ -33,6 +36,8 @@ import { SharedModule } from '@shared/shared.module';
     RankingsComponent,
     DonationsComponent,
     InformationComponent,
+    CardsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { SharedModule } from '@shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    FooterComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }

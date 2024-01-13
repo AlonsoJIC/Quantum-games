@@ -18,7 +18,7 @@
 	align-items: center;
 }
 .neon {
-	@include titles;
+	@include title(100%);
 	position: relative;
 	display: inline-block;
 	color: var(--white);

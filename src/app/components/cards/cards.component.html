@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+
+    <div class="content-wrapper col-lg-6" *ngFor="let card of card">
+      <div class="news-card">
+        <a class="cardLink"></a>
+        <img [src]="card.image" alt="" class="cardImage">
+        <div class="news-card__text-wrapper">
+          <h2 class="news-card__title">{{card.title}}</h2>
+          <div class="news-card__tech">{{card.subtitle}}</div>
+          <div class="news-card__details-wrapper">
+            <p class="cardDescription">{{card.simpleDescription}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

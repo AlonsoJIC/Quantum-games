@@ -1,4 +1,16 @@
 @import '../../../styles.scss';
+//LINEA GRADIENT SUPERIOR
+.grad-bar {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(-45deg, #34bfe9, #1e29c4, #121981, rgb(4, 8, 58));
+  background-size: 400% 400%;
+  -webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+}
+
+//NAV
 .navbar-collapse.show, .custom-toggler-button {
   background-color: var(--black);
 }
@@ -11,7 +23,9 @@
   list-style: none;
 }
 .nav-item{
-  @include normalText(16px);
+  font-family: 'Poppins', sans-serif;
+  font-size: 100%;
+  color: var(--white);
   padding: 2px;
   margin: 20px;
   border-radius: 10px;
@@ -39,4 +53,39 @@
 #navItem6:hover, #navItem7:hover {
   background-color: var(--pink) ;
   @include borderRadius(20px);
+}
+
+//LINEA ARRIBA
+@-webkit-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@-moz-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }

@@ -1,85 +1,138 @@
 @import '../../../../../styles.scss';
-
-section {
-  top: 0;
-  position: fixed;
-}
-.outer  {
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden;
-}
-.inner {
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden;
-  margin-top: 10%;
-}
-.bg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@mixin glitchCopy {
+  content: attr(data-text);
   position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  background-size: cover;
-  background-position: center;
 }
-.semiText {
-  @include titles;
+
+//
+.home {
+  padding-top: 10%;
 }
 .titleText {
-  @include title(300%);
-  margin-bottom: 0;
-  letter-spacing: -0.020em;
-  line-height: 0.70em;
-  color: var(--white);
+  @include title(350%);
+  letter-spacing: -0.050em;
 }
-span {
-  font-size: 15px;
-  margin-left: -12px;
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/*
-font-family: 'Anton', sans-serif;
-font-family: 'League Gothic', sans-serif;
-font-family: 'Poppins', sans-serif;
- */
+//
+#app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-position: center;
+	z-index: 1;
+}
 
-.home {
-  background-image: $bg-gradient,
-  url(https://get.wallhere.com/photo/Christmas-Tree-christmas-ornament-plant-interior-design-holiday-ornament-fawn-christmas-decoration-ornament-cg-artwork-thigh-doll-long-hair-event-holiday-fashion-design-blond-Christmas-eve-brown-hair-lingerie-room-tree-fun-human-leg-conifer-red-hair-Christmas-fictional-character-magenta-flesh-sitting-Toy-christmas-lights-fir-animation-heat-pine-pc-game-fur-tradition-pine-family-illustration-hair-coloring-floral-design-2065987.jpg);
-  background-repeat: no-repeat;
-  background-size:cover;
+.sub {
+  @include title(100%);
+  display: flex;
+	justify-content: center;
+	align-items: center;
+  text-align: center;
+	color: rgba(255, 255, 255, 0.87);
 }
-.first {
-  .bg {
-    background-image: $bg-gradient,
-    url(https://getwallpapers.com/wallpaper/full/7/3/2/1398154-cool-ragnarok-online-wallpaper-1920x1200-for-tablet.jpg)
+
+/* Crea la animacion de glitch con animacion 5 seg, loop infinito, alternando en reversa */
+.glitch {
+  @include title(550%);
+	position: relative;
+	color: white;
+	letter-spacing: 0;
+	animation: glitch-skew 1s infinite linear alternate-reverse;
+	&::before{
+		@include glitchCopy;
+		left: 2px;
+		text-shadow: -2px 0 #ff00c1;
+		clip: rect(44px, 450px, 56px, 0);
+		animation: glitch-anim 5s infinite linear alternate-reverse;
+	}
+	&::after {
+		@include glitchCopy;
+		left: -2px;
+		text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+		animation: glitch-anim2 1s infinite linear alternate-reverse;
+	}
+}
+/* Crea la animacion glitch con 20 steps*/
+@keyframes glitch-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+			transform: skew((random(100) / 100) + deg);
+    }
   }
 }
-.second {
-  .bg {
-    background-image: $bg-gradient,
-    url(https://getwallpapers.com/wallpaper/full/a/a/e/1398121-ragnarok-online-wallpaper-1920x1080-for-hd-1080p.jpg)
+/* Lo mismo que la funcion anterior, pero la hace un poco mas random y no tan linear*/
+@keyframes glitch-anim2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+			transform: skew((random(100) / 100) + deg);
+    }
   }
 }
-.third {
-  .bg {
-    background-image: $bg-gradient,
-      url(https://getwallpapers.com/wallpaper/full/d/6/8/1398105-ragnarok-online-wallpaper-1920x1200-for-iphone-5.jpg);
-  }
+
+// ANIMACION DE LINEAS
+#retrobg-ground {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 25%;  //TAMANIO GENERAL
+	bottom: 0;
+	background-color: #00000000;
 }
-.fourth {
-  .bg {
-    background-image: $bg-gradient,
-      url(https://getwallpapers.com/wallpaper/full/c/0/4/1398136-ragnarok-online-wallpaper-1920x1200-for-meizu.jpg)
-  }
+.retrobg-shutdown #retrobg-ground {
+	border-color: #000;
 }
-.fifth {
-  .bg {
-    background-image: $bg-gradient,
-      url(https://getwallpapers.com/wallpaper/full/8/6/c/1398116-best-ragnarok-online-wallpaper-1920x1200.jpg);
-  }
+#retrobg-groundShadow {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient( #000000 0%, transparent );  //DARLE TRANSPARENCIA
 }
+/* ............................................................... */
+#retrobg-linesWrap {
+	height: 100%;
+	perspective: 1000px;
+	perspective-origin: center top;
+}
+#retrobg-lines {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-origin: top center;
+	animation: 7s linear infinite retrobg-lines-anim;  //VELOCIDAD DE LINEAS
+}
+.retrobg-shutdown #retrobg-lines {
+	animation-duration: 5s;
+}
+@keyframes retrobg-lines-anim {
+	from { transform: rotateX( 84deg ) translateY( 0 ); }
+	to { transform: rotateX( 84deg ) translateY( 100px ); }
+}
+#retrobg-hlines,
+#retrobg-vlines {
+	position: absolute;
+	left: calc( ( 900% - 100% ) / -2 );
+	width: 900%;
+	height: 500%;
+}
+#retrobg-vlines {
+	display: flex;
+	justify-content: center;
+}
+.retrobg-hline,
+.retrobg-vline {
+	background-color: #0e063b;
+}
+.retrobg-hline { height: 3px; }
+.retrobg-vline { width: 3px; }
+.retrobg-hline + .retrobg-hline { margin-top: 98px; }
+.retrobg-vline + .retrobg-vline { margin-left: 48px; }

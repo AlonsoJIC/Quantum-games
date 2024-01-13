@@ -7,21 +7,16 @@ import { SharedModule } from '@shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
-
 @NgModule({
   declarations: [
-
     NotFoundComponent,
-
-
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     SharedModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class HomeModule { }
-

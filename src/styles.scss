@@ -11,13 +11,13 @@ https://s0.smartresize.com/wallpaper/628/215/HD-wallpaper-blonde-blue-eye-anime-
 https://s0.smartresize.com/wallpaper/229/775/HD-wallpaper-anime-girl-blonde-original-anime-yellow-eyes.jpg
 https://s0.smartresize.com/wallpaper/399/1018/HD-wallpaper-anime-original-computer-girl-glasses.jpg
 https://s0.smartresize.com/wallpaper/359/1006/HD-wallpaper-anime-original-girl-kimono-parasol-sakura-street.jpg
-
-
 */
-body {
+
+body{
   background: var(--black);
 }
-/* COLORS */
+
+ /*COLORS */
 $bg-gradient: linear-gradient(
   180deg,
   rgba(0, 0, 0, 0.6) 0%,
@@ -54,23 +54,11 @@ $bg-gradient: linear-gradient(
 
 
 /* TEXTS / TITLES */
-@mixin normalText($valor){
-  font-family: 'Poppins', sans-serif;
-  font-size: $valor;
-  color: var(--white);
-}
 @mixin title($valor){
   font-family: 'Montserrat', sans-serif;
   font-weight:bolder;
   font-size: $valor;
-}
-@mixin titles(){
-  font-family: 'Anton', sans-serif;
-  font-size: 50px;
-  letter-spacing: -0.025em;
-  line-height: 0.95em;
   color: var(--white);
-  text-transform: uppercase;
 }
 
 /* BORDER */
