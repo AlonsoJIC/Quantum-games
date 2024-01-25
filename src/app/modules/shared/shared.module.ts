@@ -5,9 +5,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from './button/button.component';
 
 
+
 @NgModule({
   declarations: [ButtonComponent],
   imports: [CommonModule, FontAwesomeModule],
-  exports: [ButtonComponent],
+  exports: [
+    ButtonComponent,
+    ],
 })
 export class SharedModule {}

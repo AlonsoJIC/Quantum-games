@@ -20,6 +20,9 @@ import { DonationsComponent } from './modules/home/pages/donations/donations.com
 import { InformationComponent } from './modules/home/pages/information/information.component';
 import { SharedModule } from '@shared/shared.module';
 import { CardsComponent } from './components/cards/cards.component';
+import { LoadingService } from './components/loading-spinner/loading-spinner.component';
+
+
 
 
 
@@ -47,9 +50,11 @@ import { CardsComponent } from './components/cards/cards.component';
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
-    FooterComponent
+    FooterComponent,
+
   ],
   providers: [
+    LoadingService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
